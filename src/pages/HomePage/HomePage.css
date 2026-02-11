@@ -1,0 +1,82 @@
+.homepage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+.homepage-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.homepage-header h1 {
+  color: #1a4d8f;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.measures-section h2,
+.info-section h2 {
+  color: #1a4d8f;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #1a4d8f;
+  padding-bottom: 5px;
+}
+
+.measures-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.measure-card {
+  display: block;
+  background-color: #f7f9fc;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dce3f0;
+  color: #1a4d8f;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.measure-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.measure-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.measure-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.homepage-footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+a {
+  color: #1a4d8f;
+}

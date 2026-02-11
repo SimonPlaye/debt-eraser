@@ -1,0 +1,58 @@
+import "./HomePage.css";
+import { Link } from "react-router-dom";
+
+export const HomePage = () => {
+  return (
+    <div className="homepage">
+      <header className="homepage-header">
+        <h1>Welcome to this Simulator</h1>
+        <p className="subtitle">
+          Simulate the effects of different measures on France's debt and
+          deficit.
+        </p>
+      </header>
+
+      <section className="measures-section">
+        <h2>Explore Measures</h2>
+        <div className="measures-cards">
+          <Link to="/capital-tax" className="measure-card">
+            <h3>Capital Tax</h3>
+            <p>Simulate the impact of capital taxation on debt reduction.</p>
+          </Link>
+          <Link to="/heritage-tax" className="measure-card">
+            <h3>Heritage Tax</h3>
+            <p>Simulate how inheritance taxation affects France's finances.</p>
+          </Link>
+          <Link to="/spending-reduction" className="measure-card">
+            <h3>Spending Reduction</h3>
+            <p>Explore the effect of reducing government spending.</p>
+          </Link>
+          <Link to="/capital-exceptional-debit" className="measure-card">
+            <h3>Capital Exceptional Debit</h3>
+            <p>Test exceptional capital measures for debt management.</p>
+          </Link>
+        </div>
+      </section>
+
+      <section className="info-section">
+        <h2>About the Simulations</h2>
+        <p>Each page above:</p>
+        <ul>
+          <li>
+            Offers to simulate the effect of a measure to reduce France's debt
+            and deficit
+          </li>
+          <li>Explains how those simulations have been computed</li>
+          <li>Describes which assumptions underlie the computation</li>
+        </ul>
+      </section>
+
+      <footer className="homepage-footer">
+        <p>
+          Additionally, the <Link to="/references">References</Link> page
+          contains a bibliography.
+        </p>
+      </footer>
+    </div>
+  );
+};
