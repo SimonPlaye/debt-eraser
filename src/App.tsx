@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { CapitalTaxPage } from "./pages/CapitalTaxPage";
 import { HeritageTaxPage } from "./pages/HeritageTaxPage";
-import { DeficitReductionPage } from "./pages/DeficitReductionPage";
+import { SpendingReductionPage } from "./pages/SpendingReductionPage";
 import { CapitalExceptionalDebitPage } from "./pages/CapitalExceptionalDebitPage";
 import { GeneralAssumptionsPage } from "./pages/GeneralAssumptionsPage";
 import { ReferencesPage } from "./pages/ReferencesPage";
@@ -14,7 +14,7 @@ export const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/capital-tax" element={<CapitalTaxPage />} />
         <Route path="/heritage-tax" element={<HeritageTaxPage />} />
-        <Route path="/deficit-reduction" element={<DeficitReductionPage />} />
+        <Route path="/deficit-reduction" element={<SpendingReductionPage />} />
         <Route
           path="/capital-exceptional-debit"
           element={<CapitalExceptionalDebitPage />}
