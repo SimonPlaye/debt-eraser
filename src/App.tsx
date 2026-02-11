@@ -14,7 +14,7 @@ export const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/capital-tax" element={<CapitalTaxPage />} />
         <Route path="/heritage-tax" element={<HeritageTaxPage />} />
-        <Route path="/deficit-reduction" element={<SpendingReductionPage />} />
+        <Route path="/spending-reduction" element={<SpendingReductionPage />} />
         <Route
           path="/capital-exceptional-debit"
           element={<CapitalExceptionalDebitPage />}
