@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
-import { CapitalTaxPage } from "./pages/CapitalTaxPage";
+import { CapitalTaxPage } from "./pages/CapitalTaxPage/CapitalTaxPage";
 import { HeritageTaxPage } from "./pages/HeritageTaxPage";
 import { SpendingReductionPage } from "./pages/SpendingReductionPage";
 import { CapitalExceptionalDebitPage } from "./pages/CapitalExceptionalDebitPage";
