@@ -1,4 +1,4 @@
-import { Slider } from "../../shared/Slider";
+import { Slider } from "./Slider";
 import "./SliderGrid.css";
 
 type SliderConfig = {

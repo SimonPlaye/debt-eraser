@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import "./CapitalTaxPage.css";
 import { LineChart } from "../../shared/LineChart";
 import { getGraphData } from "./getGraphData";
-import { SliderGrid } from "./SliderGrid";
 import { Toggle } from "../../shared/Toggle";
 import { Slider } from "../../shared/Slider";
 import type { GraphDataType } from "../../shared/types";
+import { SliderGrid } from "../../shared/SliderGrid";
 
 export const CapitalTaxPage = () => {
   const [taxLevelGroup1mTo5m, setTaxLevelGroup1mTo5m] = useState(0);

@@ -48,11 +48,3 @@ input[type="range"] {
 .computation-section p {
   line-height: 1.6;
 }
-
-.assumptions-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.assumptions-section ul li ul li {
-  margin-bottom: 0.25rem;
-}
