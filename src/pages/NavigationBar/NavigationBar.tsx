@@ -6,7 +6,7 @@ export const NavigationBar = () => {
     { path: "/", label: "Home" },
     { path: "/capital-tax", label: "Capital Tax" },
     { path: "/spending-reduction", label: "Spending Reduction" },
-    { path: "/capital-exceptional-debit", label: "Exceptional Debit" },
+    { path: "/capital-exceptional-levy", label: "Exceptional Capital Levy" },
     { path: "/references", label: "References" },
   ];
 

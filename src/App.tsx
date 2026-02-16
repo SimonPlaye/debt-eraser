@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { CapitalTaxPage } from "./pages/CapitalTaxPage/CapitalTaxPage";
 import { SpendingReductionPage } from "./pages/SpendingReductionPage";
-import { CapitalExceptionalDebitPage } from "./pages/CapitalExceptionalDebitPage";
+import { ExceptionalCapitalLevyPage } from "./pages/ExceptionalCapitalLevyPage/ExceptionalCapitalLevyPage";
 import { ReferencesPage } from "./pages/ReferencesPage";
 import { useEffect } from "react";
 import { NavigationBar } from "./pages/NavigationBar/NavigationBar";
@@ -17,8 +17,8 @@ export const App = () => {
         <Route path="/capital-tax" element={<CapitalTaxPage />} />
         <Route path="/spending-reduction" element={<SpendingReductionPage />} />
         <Route
-          path="/capital-exceptional-debit"
-          element={<CapitalExceptionalDebitPage />}
+          path="/capital-exceptional-levy"
+          element={<ExceptionalCapitalLevyPage />}
         />
         <Route path="/references" element={<ReferencesPage />} />
       </Routes>

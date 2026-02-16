@@ -23,8 +23,8 @@ export const HomePage = () => {
             <h3>Spending Reduction</h3>
             <p>Explore the effect of reducing government spending.</p>
           </Link>
-          <Link to="/capital-exceptional-debit" className="measure-card">
-            <h3>Capital Exceptional Debit</h3>
+          <Link to="/capital-exceptional-levy" className="measure-card">
+            <h3>Exceptional Capital Levy</h3>
             <p>Test exceptional capital measures for debt management.</p>
           </Link>
         </div>
