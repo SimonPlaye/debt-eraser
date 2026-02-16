@@ -29,6 +29,7 @@ export const getGraphData = ({ taxLevels }: TaxLevels) => {
       deficit,
       debt,
       gdp,
+      yearIndex,
     });
 
     deficit = yearValues.deficit;
@@ -47,14 +48,17 @@ const getAggregateValues = ({
   deficit,
   debt,
   gdp,
+  yearIndex,
 }: {
   taxLevels: TaxLevelPerWealthGroup;
   deficit: number;
   debt: number;
   gdp: number;
+  yearIndex: number;
 }) => {
   const taxedRevenueInBillions = getTaxedRevenueInBillions({
     taxLevels,
+    yearIndex,
   });
 
   const newDeficitLevel =
@@ -67,56 +71,67 @@ const getAggregateValues = ({
   };
 };
 
-const getTaxedRevenueInBillions = ({ taxLevels }: TaxLevels): number => {
+const getTaxedRevenueInBillions = ({
+  taxLevels,
+  yearIndex,
+}: {
+  taxLevels: TaxLevelPerWealthGroup;
+  yearIndex: number;
+}): number => {
   const averageWealthForGroup1mTo5m =
     1 * WEIGHT_LOWEST_BOUNDARY + 5 * WEIGHT_UPPER_BOUNDARY;
   const revenueFromGroup1mTo5m =
     taxLevels.taxLevelGroup1mTo5m *
-    averageWealthForGroup1mTo5m *
-    HOUSEHOLD_NB_BETWEEN_1M_AND_5M;
+    (averageWealthForGroup1mTo5m *
+      HOUSEHOLD_NB_BETWEEN_1M_AND_5M *
+      (1 + CAPITAL_GROWTH_RATE - taxLevels.taxLevelGroup1mTo5m) ** yearIndex);
 
   const averageWealthForGroup5mTo10m =
     5 * WEIGHT_LOWEST_BOUNDARY + 10 * WEIGHT_UPPER_BOUNDARY;
   const revenueFromGroup5mTo10m =
     taxLevels.taxLevelGroup5mTo10m *
     averageWealthForGroup5mTo10m *
-    HOUSEHOLD_NB_BETWEEN_5M_AND_10M;
+    HOUSEHOLD_NB_BETWEEN_5M_AND_10M *
+    (1 + CAPITAL_GROWTH_RATE - taxLevels.taxLevelGroup5mTo10m) ** yearIndex;
 
   const averageWealthForGroup10mTo50m =
     10 * WEIGHT_LOWEST_BOUNDARY + 50 * WEIGHT_UPPER_BOUNDARY;
   const revenueFromGroup10mTo50m =
     taxLevels.taxLevelGroup10mTo50m *
     averageWealthForGroup10mTo50m *
-    HOUSEHOLD_NB_BETWEEN_10M_AND_50M;
+    HOUSEHOLD_NB_BETWEEN_10M_AND_50M *
+    (1 + CAPITAL_GROWTH_RATE - taxLevels.taxLevelGroup10mTo50m) ** yearIndex;
 
   const averageWealthForGroup50mTo100m =
     50 * WEIGHT_LOWEST_BOUNDARY + 100 * WEIGHT_UPPER_BOUNDARY;
   const revenueFromGroup50mTo100m =
     taxLevels.taxLevelGroup50mTo100m *
     averageWealthForGroup50mTo100m *
-    HOUSEHOLD_NB_BETWEEN_50M_AND_100M;
+    HOUSEHOLD_NB_BETWEEN_50M_AND_100M *
+    (1 + CAPITAL_GROWTH_RATE - taxLevels.taxLevelGroup50mTo100m) ** yearIndex;
 
   const averageWealthForGroup100mTo500m =
     100 * WEIGHT_LOWEST_BOUNDARY + 500 * WEIGHT_UPPER_BOUNDARY;
   const revenueFromGroup100mTo500m =
     taxLevels.taxLevelGroup100mTo500m *
     averageWealthForGroup100mTo500m *
-    HOUSEHOLD_NB_BETWEEN_100M_AND_500M;
+    HOUSEHOLD_NB_BETWEEN_100M_AND_500M *
+    (1 + CAPITAL_GROWTH_RATE - taxLevels.taxLevelGroup100mTo500m) ** yearIndex;
 
   const averageWealthForGroupFrom500m = 500;
   const revenueFromGroupFrom500m =
     taxLevels.taxLevelGroupFrom500m *
     averageWealthForGroupFrom500m *
-    HOUSEHOLD_NB_WITH_MORE_THAN_500M;
+    HOUSEHOLD_NB_WITH_MORE_THAN_500M *
+    (1 + CAPITAL_GROWTH_RATE - taxLevels.taxLevelGroupFrom500m) ** yearIndex;
 
   return (
-    ((revenueFromGroup1mTo5m +
+    (revenueFromGroup1mTo5m +
       revenueFromGroup5mTo10m +
       revenueFromGroup10mTo50m +
       revenueFromGroup50mTo100m +
       revenueFromGroup100mTo500m +
-      revenueFromGroupFrom500m) *
-      (1 + CAPITAL_GROWTH_RATE)) /
+      revenueFromGroupFrom500m) /
     1000
   );
 };
