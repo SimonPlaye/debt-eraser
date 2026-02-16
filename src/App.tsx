@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { CapitalTaxPage } from "./pages/CapitalTaxPage/CapitalTaxPage";
-import { SpendingReductionPage } from "./pages/SpendingReductionPage";
+import { SpendingReductionPage } from "./pages/SpendingReductionPage/SpendingReductionPage";
 import { ExceptionalCapitalLevyPage } from "./pages/ExceptionalCapitalLevyPage/ExceptionalCapitalLevyPage";
 import { ReferencesPage } from "./pages/ReferencesPage";
 import { useEffect } from "react";

@@ -2,7 +2,6 @@
 export const DEBT_LEVEL_IN_2024 = 3305.5;
 export const GDP_LEVEL_IN_2024 = 2925.64;
 export const DEFICIT_LEVEL_IN_2024 = 169.8; // Negative means surplus
-export const AVERAGE_DEFICIT_EVOLUTION_PER_YEAR = -0.06;
 export const AVERAGE_GDP_EVOLUTION_PER_YEAR = 0.032;
 export const AVERAGE_INFLATION_RATE_PER_YEAR = 0.017;
 
@@ -26,3 +25,11 @@ export const CAPITAL_GROWTH_RATE = 0.05;
 export const STARTING_YEAR = 2024;
 export const ENDING_YEAR = 2050;
 export const NUMBER_OF_YEARS = ENDING_YEAR - STARTING_YEAR;
+
+// State's spending
+export const TAX_EXPENDITURES_IN_2024 = 90;
+export const EDUCATION_BUDGET = 87;
+export const DEFENSE_BUDGET = 68;
+export const RESEARCH_AND_HIGHER_EDUCATION_BUDGET = 32;
+export const SOLIDARITY_AND_ALL_BUDGET = 31;
+export const ECOLOGY_BUDGET = 24;

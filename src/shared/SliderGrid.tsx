@@ -11,13 +11,18 @@ export const SliderGrid = ({
   sliders,
   maxValue = 0.1,
   step = 0.001,
+  columns = 3,
 }: {
   sliders: SliderConfig[];
   maxValue?: number;
   step?: number;
+  columns?: number;
 }) => {
   return (
-    <div className="slider-grid">
+    <div
+      className="slider-grid"
+      style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+    >
       {sliders.map(({ title, value, setValue }) => (
         <Slider
           key={title}
