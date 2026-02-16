@@ -19,10 +19,6 @@ export const HomePage = () => {
             <h3>Capital Tax</h3>
             <p>Simulate the impact of capital taxation on debt reduction.</p>
           </Link>
-          <Link to="/heritage-tax" className="measure-card">
-            <h3>Heritage Tax</h3>
-            <p>Simulate how inheritance taxation affects France's finances.</p>
-          </Link>
           <Link to="/spending-reduction" className="measure-card">
             <h3>Spending Reduction</h3>
             <p>Explore the effect of reducing government spending.</p>

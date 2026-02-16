@@ -5,10 +5,8 @@ export const NavigationBar = () => {
   const links = [
     { path: "/", label: "Home" },
     { path: "/capital-tax", label: "Capital Tax" },
-    { path: "/heritage-tax", label: "Heritage Tax" },
     { path: "/spending-reduction", label: "Spending Reduction" },
     { path: "/capital-exceptional-debit", label: "Exceptional Debit" },
-    { path: "/general-assumptions", label: "Assumptions" },
     { path: "/references", label: "References" },
   ];
 
