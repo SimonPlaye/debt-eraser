@@ -1,3 +1,5 @@
+import "./Slider.css";
+
 export const Slider = ({
   title,
   value,
@@ -20,6 +22,7 @@ export const Slider = ({
       </label>
       <input
         type="range"
+        className="custom-slider"
         id="slider"
         min={minValue}
         max={maxValue}
