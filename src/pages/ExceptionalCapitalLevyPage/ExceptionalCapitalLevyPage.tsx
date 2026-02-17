@@ -128,74 +128,135 @@ export const ExceptionalCapitalLevyPage = () => {
 
       <section className="assumptions-section">
         <h2>Assumptions</h2>
-        <p>
-          The simulation is based on the following French economic and household
-          data:
-        </p>
-        <ul>
-          <li>French GDP in 2024: 2,925.64 billion €</li>
-          <li>French Debt in 2024: 3,305.3 billion €</li>
-          <li>French Deficit in 2024: 168.9 billion €</li>
-          <li>GDP growth evolution: 3.20% per year</li>
-          <li>Deficit evolution's follow GDP growth rate</li>
-          <li>Capital growth rate: 6% per year</li>
-          <li>No population growth</li>
-          <li>Total number of French households: 31.1 million</li>
-          <li>
-            Number of households per wealth group:
-            <ul>
-              <li>€1M – €5M: 2,628,568</li>
-              <li>€5M – €10M: 137,305</li>
-              <li>€10M – €50M: 51,403</li>
-              <li>€50M – €100M: 2,638</li>
-              <li>€100M – €500M: 1,168</li>
-              <li>€500M+: 82</li>
-            </ul>
-          </li>
-          <li>
-            For each group, the average wealth is assumed to be 2/3 of the lower
-            bound and 1/3 of the upper bound; for the €500M+ group, the average
-            wealth is assumed to be €500M.
-          </li>
-        </ul>
-      </section>
 
+        <div className="assumptions-grid">
+          <div className="assumption-card">
+            <h3>Macroeconomic Data (2024)</h3>
+            <ul>
+              <li>
+                <strong>GDP:</strong> €2,925.64B
+              </li>
+              <li>
+                <strong>Public Debt:</strong> €3,305.3B
+              </li>
+              <li>
+                <strong>Deficit:</strong> €168.9B
+              </li>
+            </ul>
+          </div>
+
+          <div className="assumption-card">
+            <h3>Growth Hypotheses</h3>
+            <ul>
+              <li>
+                GDP growth: <strong>3.2% / yr</strong>
+              </li>
+              <li>Deficit follows GDP growth</li>
+              <li>
+                Capital growth: <strong>6% / yr</strong>
+              </li>
+              <li>No population growth</li>
+            </ul>
+          </div>
+
+          <div className="assumption-card">
+            <h3>Households</h3>
+            <table className="households-table">
+              <tbody>
+                <tr>
+                  <td>Total households</td>
+                  <td>31.1M</td>
+                </tr>
+                <tr>
+                  <td>€1M–€5M</td>
+                  <td>2,628,568</td>
+                </tr>
+                <tr>
+                  <td>€5M–€10M</td>
+                  <td>137,305</td>
+                </tr>
+                <tr>
+                  <td>€10M–€50M</td>
+                  <td>51,403</td>
+                </tr>
+                <tr>
+                  <td>€50M–€100M</td>
+                  <td>2,638</td>
+                </tr>
+                <tr>
+                  <td>€100M–€500M</td>
+                  <td>1,168</td>
+                </tr>
+                <tr>
+                  <td>€500M+</td>
+                  <td>82</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="assumption-card">
+            <h3>Wealth Estimation</h3>
+            <p>Average wealth per group is assumed to be:</p>
+            <ul>
+              <li>⅔ of the lower bound</li>
+              <li>⅓ of the upper bound</li>
+              <li>€500M flat average for the €500M+ group</li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section className="computation-section">
-        <h2>How Are the Simulations Computed</h2>
-        <ul>
-          <li>
-            In 2025 only:
+        <h2>How the Simulation Is Computed</h2>
+
+        <div className="computation-steps">
+          <div className="step-card">
+            <span className="step-number">1</span>
+            <p>
+              <strong>Year 2025:</strong>
+            </p>
+            <p>
+              For each capital group <strong>i</strong>:
+            </p>
             <ul>
-              <li>
-                Compute the total capital for each group in 2025 by taking the
-                average wealth of the group, multiplying it by the number of
-                households in the group, and increasing it by the capital growth
-                rate.
-              </li>
-              <li>
-                Apply the exceptional capital levy to each group's capital.
-              </li>
-              <li>
-                Increase the deficit by the GDP growth rate and decrease it by
-                the sum of all capital levied.
+              <li className="formula">
+                Levy Revenue Group<sub>i</sub> = C<sub>i</sub>(T) x (1 + Capital
+                Growth Rate) x Levy Rate Group<sub>i</sub>
               </li>
             </ul>
-          </li>
-          <li>
-            For every year T between 2025 and 2050 included:
+            <p className="formula">
+              Levy Revenue = Σ Levy Revenue Group<sub>i</sub>
+            </p>
+            <p className="formula">
+              Deficit(T+1) = Deficit(T) × (1 + GDP growth rate) − Levy Revenue
+            </p>
+            <p className="formula">Debt(T+1) = Debt(T) + Deficit(T+1)</p>
+            <p className="formula">GDP(T+1) = GDP(T) × (1 + GDP growth rate)</p>
+            <p>
+              Note - An example of how C<sub>i</sub>(T) is computed (here i =
+              €100M–€500M):
+            </p>
+            <p className="formula">
+              C<sub>i</sub>(T) = 1,168 * (⅔ * €100M + ⅓ * €500M)
+            </p>
+          </div>
+
+          <div className="step-card">
+            <span className="step-number">2</span>
+            <p>
+              <strong>Years 2025–2050 (both included):</strong>
+            </p>
             <ul>
-              <li>
-                At T = t + 1: take the GDP of T = t and increase it by the GDP
-                growth rate.
+              <li className="formula">
+                Deficit(T+1) = Deficit(T) × (1 + GDP growth rate)
               </li>
-              <li>
-                At T = t + 1: take the deficit of T = t and increase it by the
-                GDP growth rate.
+              <li className="formula">Debt(T+1) = Debt(T) + Deficit(T+1)</li>
+              <li className="formula">
+                GDP(T+1) = GDP(T) × (1 + GDP growth rate)
               </li>
-              <li>At T = t + 1: take the debt at T = t and add the deficit.</li>
             </ul>
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -140,65 +140,119 @@ export const SpendingReductionPage = () => {
 
       <section className="assumptions-section">
         <h2>Assumptions</h2>
-        <p>
-          The simulation is based on the following French economic and household
-          data:
-        </p>
-        <ul>
-          <li>French GDP in 2024: 2,925.64 billion €</li>
-          <li>French Debt in 2024: 3,305.3 billion €</li>
-          <li>French Deficit in 2024: 168.9 billion €</li>
-          <li>GDP growth evolution: 3.20% per year</li>
-          <li>Deficit evolution's follow GDP growth rate</li>
-          <li>No population growth</li>
-          <li>
-            Budgets in 2024:
+
+        <div className="assumptions-grid">
+          <div className="assumption-card">
+            <h3>Macroeconomic Data (2024)</h3>
             <ul>
-              <li>Tax Expenditures: {TAX_EXPENDITURES_IN_2024} billion €</li>
-              <li>Education: {EDUCATION_BUDGET} billion €</li>
-              <li>Defense: {DEFENSE_BUDGET} billion €</li>
               <li>
-                Higher Education: {RESEARCH_AND_HIGHER_EDUCATION_BUDGET} billion
-                €
+                <strong>GDP:</strong> €2,925.64B
               </li>
-              <li>Solidarity: {SOLIDARITY_AND_ALL_BUDGET} billion €</li>
-              <li>Ecology: {ECOLOGY_BUDGET} billion €</li>
+              <li>
+                <strong>Public Debt:</strong> €3,305.3B
+              </li>
+              <li>
+                <strong>Deficit:</strong> €168.9B
+              </li>
             </ul>
-          </li>
-        </ul>
+          </div>
+
+          <div className="assumption-card">
+            <h3>Growth Hypotheses</h3>
+            <ul>
+              <li>
+                GDP growth: <strong>3.2% / yr</strong>
+              </li>
+              <li>Deficit follows GDP growth</li>
+              <li>No population growth</li>
+            </ul>
+          </div>
+
+          <div className="assumption-card">
+            <h3>Budgets in 2024 (billion €)</h3>
+            <table className="households-table">
+              <tbody>
+                <tr>
+                  <td>Tax Expenditures</td>
+                  <td>{TAX_EXPENDITURES_IN_2024}</td>
+                </tr>
+                <tr>
+                  <td>Education</td>
+                  <td>{EDUCATION_BUDGET}</td>
+                </tr>
+                <tr>
+                  <td>Defense</td>
+                  <td>{DEFENSE_BUDGET}</td>
+                </tr>
+                <tr>
+                  <td>Higher Education</td>
+                  <td>{RESEARCH_AND_HIGHER_EDUCATION_BUDGET}</td>
+                </tr>
+                <tr>
+                  <td>Solidarity</td>
+                  <td>{SOLIDARITY_AND_ALL_BUDGET}</td>
+                </tr>
+                <tr>
+                  <td>Ecology</td>
+                  <td>{ECOLOGY_BUDGET}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="assumption-card">
+            <h3>Other Assumptions</h3>
+            <ul>
+              <li>All reductions expressed as percentages of budgets</li>
+              <li>Deficit adjusted according to reductions (see below)</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section className="computation-section">
-        <h2>How Are the Simulations Computed</h2>
-        <ul>
-          <li>
-            In 2025 only:
+        <h2>How the Simulation Is Computed</h2>
+
+        <div className="computation-steps">
+          <div className="step-card">
+            <span className="step-number">1</span>
+            <p>
+              <strong>Year 2025:</strong>
+            </p>
+            <p>
+              For each budget <strong>i</strong>:
+            </p>
+            <p className="formula">
+              Budget<sub>i</sub>(T+1) = Budget<sub>i</sub>(T) × (1 + GDP growth
+              rate) x (1 - Budget Cut Group<sub>i</sub>)
+            </p>
+            <p>Then:</p>
+            <p className="formula">
+              Budget(T+1) = Σ Budget<sub>i</sub>(T+1)
+            </p>
+            <p className="formula">
+              Deficit(T+1) = Deficit(T) × (1 + GDP growth rate) − Budget(T+1)
+            </p>
+            <p className="formula">Debt(T+1) = Debt(T) + Deficit(T+1)</p>
+            <p className="formula">GDP(T+1) = GDP(T) × (1 + GDP growth rate)</p>
+          </div>
+
+          <div className="step-card">
+            <span className="step-number">2</span>
+            <p>
+              <strong>Years 2025–2050 (both included):</strong>
+            </p>
             <ul>
-              <li>
-                Increase each budget and the deficit by the GDP growth rate.
+              <li className="formula">
+                Deficit(T+1) = Deficit(T) × (1 + GDP growth rate)
               </li>
-              <li>
-                Apply the corresponding reduction percentage to the budget of
-                each group.
+              <li className="formula">Debt(T+1) = Debt(T) + Deficit(T+1)</li>
+              <li className="formula">
+                GDP(T+1) = GDP(T) × (1 + GDP growth rate)
               </li>
-              <li>Decrease the deficit by the sum of all reduction applied.</li>
             </ul>
-          </li>
-          <li>
-            For every year T between 2025 and 2050 included:{" "}
-            <ul>
-              <li>
-                At T = t + 1: take the GDP of T = t and increase it by the GDP
-                growth rate.
-              </li>
-              <li>
-                At T = t + 1: take the deficit of T = t and increase it by the
-                GDP growth rate.
-              </li>
-              <li>At T = t + 1: take the debt at T = t and add the deficit.</li>
-            </ul>
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
     </div>
   );

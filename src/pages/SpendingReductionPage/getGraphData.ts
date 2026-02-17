@@ -22,26 +22,38 @@ export const getGraphData = ({ taxLevels }: TaxLevels) => {
   const deficitToGdpRatios: number[] = [deficit / gdp];
 
   const expenditureBudget2025 =
-    TAX_EXPENDITURES_IN_2024 * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR);
+    TAX_EXPENDITURES_IN_2024 *
+    (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
+    taxLevels.taxTaxExpenditure;
   const educationBudget2025 =
-    EDUCATION_BUDGET * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR);
+    EDUCATION_BUDGET *
+    (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
+    taxLevels.taxEducation;
   const defenseBudget2025 =
-    DEFENSE_BUDGET * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR);
+    DEFENSE_BUDGET *
+    (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
+    taxLevels.taxDefense;
   const researchBudget2025 =
-    RESEARCH_AND_HIGHER_EDUCATION_BUDGET * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR);
+    RESEARCH_AND_HIGHER_EDUCATION_BUDGET *
+    (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
+    taxLevels.taxResearch;
   const solidarityBudget2025 =
-    SOLIDARITY_AND_ALL_BUDGET * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR);
+    SOLIDARITY_AND_ALL_BUDGET *
+    (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
+    taxLevels.taxSolidarity;
   const ecologyBudget2025 =
-    ECOLOGY_BUDGET * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR);
+    ECOLOGY_BUDGET *
+    (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
+    taxLevels.taxEcology;
 
   deficit =
     deficit * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) -
-    (expenditureBudget2025 * taxLevels.taxTaxExpenditure +
-      educationBudget2025 * taxLevels.taxEducation +
-      defenseBudget2025 * taxLevels.taxDefense +
-      researchBudget2025 * taxLevels.taxResearch +
-      solidarityBudget2025 * taxLevels.taxSolidarity +
-      ecologyBudget2025 * taxLevels.taxEcology);
+    (expenditureBudget2025 +
+      educationBudget2025 +
+      defenseBudget2025 +
+      researchBudget2025 +
+      solidarityBudget2025 +
+      ecologyBudget2025);
 
   debt = Math.max(debt + deficit, 0);
   gdp = gdp * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR);
