@@ -137,9 +137,10 @@ export const CapitalTaxPage = () => {
           <li>French GDP in 2024: 2,925.64 billion €</li>
           <li>French Debt in 2024: 3,305.3 billion €</li>
           <li>French Deficit in 2024: 168.9 billion €</li>
-          <li>Deficit evolution: -6% per year</li>
           <li>GDP growth evolution: 3.20% per year</li>
+          <li>Deficit evolution's follow GDP growth rate</li>
           <li>Capital growth rate: 6% per year</li>
+          <li>No population growth</li>
           <li>Total number of French households: 31.1 million</li>
           <li>
             Number of households per wealth group:
@@ -164,13 +165,13 @@ export const CapitalTaxPage = () => {
         <h2>How Are the Simulations Computed</h2>
         <ul>
           <li>
-            At t = 1: take the GDP of t = 0 and increase it by the GDP growth
-            rate.
+            At T = t + 1: take the GDP of T = t and increase it by the GDP
+            growth rate.
           </li>
           <li>
-            At t = 1:
+            At T = t + 1:
             <ul>
-              <li>Compute the capital of each group at t = 0.</li>
+              <li>Compute the capital of each group at T = t.</li>
               <li>Increase it by the capital growth rate.</li>
               <li>Apply the corresponding tax to the capital of each group.</li>
               <li>Sum to get the overall revenue.</li>
@@ -178,12 +179,12 @@ export const CapitalTaxPage = () => {
           </li>
 
           <li>
-            At t = 1: take the deficit of t = 0 and increase it by the deficit
-            growth rate.
+            At T = t + 1: take the deficit of T = t and increase it by the
+            deficit growth rate.
           </li>
           <li>
-            At t = 1: take the debt at t = 0, add the deficit and the revenue
-            from the tax.
+            At T = t + 1: take the debt at T = t, add the deficit and the
+            revenue from the tax.
           </li>
         </ul>
       </section>
