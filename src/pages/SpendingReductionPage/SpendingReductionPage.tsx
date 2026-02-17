@@ -185,14 +185,19 @@ export const SpendingReductionPage = () => {
             </ul>
           </li>
           <li>
-            At T = t + 1: take the GDP of T = t and increase it by the GDP
-            growth rate.
+            For every year T between 2025 and 2050 included:{" "}
+            <ul>
+              <li>
+                At T = t + 1: take the GDP of T = t and increase it by the GDP
+                growth rate.
+              </li>
+              <li>
+                At T = t + 1: take the deficit of T = t and increase it by the
+                GDP growth rate.
+              </li>
+              <li>At T = t + 1: take the debt at T = t and add the deficit.</li>
+            </ul>
           </li>
-          <li>
-            At T = t + 1: take the deficit of T = t and increase it by the GDP
-            growth rate.
-          </li>
-          <li>At T = t + 1: take the debt at T = t and add the deficit.</li>
         </ul>
       </section>
     </div>
