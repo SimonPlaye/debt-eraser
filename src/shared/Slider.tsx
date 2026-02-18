@@ -20,15 +20,15 @@ export const Slider = ({
       <label htmlFor="slider">
         {title}: {roundToStep(value, step)}%
       </label>
+
       <input
         type="range"
         className="custom-slider"
-        id="slider"
         min={minValue}
         max={maxValue}
         step={step}
         value={value}
-        onChange={(e) => setValue(parseFloat(e.target.value))}
+        onChange={(e) => setValue(Number(e.target.value))}
       />
     </div>
   );

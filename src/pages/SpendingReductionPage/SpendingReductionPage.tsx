@@ -109,7 +109,7 @@ export const SpendingReductionPage = () => {
                 },
               ]}
               maxValue={1}
-              step={0.01}
+              step={0.05}
               columns={2}
             />
           )}
@@ -126,7 +126,7 @@ export const SpendingReductionPage = () => {
               value={uniformTaxRate}
               setValue={setUniformTaxRate}
               maxValue={1}
-              step={0.001}
+              step={0.05}
             />
           )}
         </div>

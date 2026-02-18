@@ -3,33 +3,22 @@
   width: 100%;
   height: 8px;
   border-radius: 4px;
-  background: repeating-linear-gradient(
-    to right,
-    #e9edf5,
-    /* light track color */ #e9edf5 10%,
-    /* space before tick */ #a3b4d1 10%,
-    /* tick color (soft blue) */ #a3b4d1 11% /* tick thickness */
-  );
   outline: none;
-}
 
-/* Thumb styling */
-.custom-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #1a4d8f; /* main accent color */
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #fff;
-}
+  background-color: #e9edf5;
 
-.custom-slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: #1a4d8f; /* main accent color */
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #fff;
+  background-image:
+    linear-gradient(to right, #a3b4d1 0, #a3b4d1 3px, transparent 3px),
+    linear-gradient(
+      to right,
+      transparent calc(100% - 3px),
+      #a3b4d1 calc(100% - 3px),
+      #a3b4d1 100%
+    );
+
+  background-size:
+    10% 100%,
+    100% 100%;
+
+  background-repeat: repeat-x, no-repeat;
 }
