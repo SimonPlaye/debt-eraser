@@ -38,20 +38,27 @@ export const HomePage = () => {
 
       <section className="info-section">
         <h2>About the Simulations</h2>
-        <p>Each page above:</p>
-        <ul>
+
+        <p className="info-intro">Each simulation page contains this:</p>
+
+        <ul className="info-list">
           <li>
-            Offers to simulate the effect of a measure to reduce France's debt
-            and deficit
+            <strong>Policy simulation</strong> – evaluates a measure’s impact on
+            France’s debt and deficit
           </li>
-          <li>Explains how those simulations have been computed</li>
-          <li>Describes which assumptions underlie the computation</li>
           <li>
-            Note that all simulations start on <strong>2025</strong> while the
-            data start in <strong>2024</strong>. Hence, the consequences of the
-            measures are only visible from 2025 onwards.
+            <strong>Assumptions</strong> – details the economic hypotheses used
+          </li>
+          <li>
+            <strong>Methodology</strong> – explains how the simulation is
+            computed
           </li>
         </ul>
+        <p>
+          Note on the <strong>Timeline</strong> - simulations start in{" "}
+          <strong>2025</strong>, using <strong>2024</strong> data (effects
+          visible from 2025 onward)
+        </p>
       </section>
 
       <footer className="homepage-footer">
