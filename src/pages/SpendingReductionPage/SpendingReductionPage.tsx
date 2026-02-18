@@ -63,14 +63,17 @@ export const SpendingReductionPage = () => {
   return (
     <div className="tax-capital-page">
       <header className="page-header">
-        <h1>Reducing Spending</h1>
+        <h1>Spending Reduction</h1>
+        <p className="subtitle">
+          Simulate the effect of reducing government spending on debt reduction.
+        </p>
       </header>
 
       <section className="simulation-section">
         <h2>Simulation</h2>
 
         <div className="parameter-subsection">
-          <h3>Reduce Spending (Budgets in 2024 are in brackets)</h3>
+          <h3>Spending Reduction in %</h3>
           {!applySameTaxRateToAllGroups && (
             <SliderGrid
               sliders={[
@@ -143,7 +146,7 @@ export const SpendingReductionPage = () => {
 
         <div className="assumptions-grid">
           <div className="assumption-card">
-            <h3>Macroeconomic Data (2024)</h3>
+            <h3>Macroeconomic Data</h3>
             <ul>
               <li>
                 <strong>GDP:</strong> €2,925.64B
@@ -169,7 +172,7 @@ export const SpendingReductionPage = () => {
           </div>
 
           <div className="assumption-card">
-            <h3>Budgets in 2024 (billion €)</h3>
+            <h3>Budgets in (billion €)</h3>
             <table className="households-table">
               <tbody>
                 <tr>
@@ -211,13 +214,16 @@ export const SpendingReductionPage = () => {
       </section>
 
       <section className="computation-section">
-        <h2>How the Simulation Is Computed</h2>
+        <h2>Computation's Steps</h2>
 
         <div className="computation-steps">
           <div className="step-card">
             <span className="step-number">1</span>
             <p>
-              <strong>Year 2025:</strong>
+              <strong>
+                Year 2025 - Decreasing the spending of the budget and update the
+                deficit and debt
+              </strong>
             </p>
             <p>
               For each budget <strong>i</strong>:
@@ -240,7 +246,10 @@ export const SpendingReductionPage = () => {
           <div className="step-card">
             <span className="step-number">2</span>
             <p>
-              <strong>Years 2025–2050 (both included):</strong>
+              <strong>
+                Years 2025–2050 (both included) - Increase variables by normal
+                growth rate{" "}
+              </strong>
             </p>
             <ul>
               <li className="formula">

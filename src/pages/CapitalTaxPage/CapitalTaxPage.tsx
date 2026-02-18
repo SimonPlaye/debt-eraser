@@ -55,7 +55,11 @@ export const CapitalTaxPage = () => {
   return (
     <div className="tax-capital-page">
       <header className="page-header">
-        <h1>Taxing Capital</h1>
+        <h1>Capital Taxation</h1>
+        <p className="subtitle">
+          Simulate the effect of a permanent capital tax on millionaires for
+          debt reduction.
+        </p>
       </header>
 
       <section className="simulation-section">
@@ -132,7 +136,7 @@ export const CapitalTaxPage = () => {
 
         <div className="assumptions-grid">
           <div className="assumption-card">
-            <h3>Macroeconomic Data (2024)</h3>
+            <h3>Macroeconomic Data</h3>
             <ul>
               <li>
                 <strong>GDP:</strong> €2,925.64B
@@ -209,11 +213,16 @@ export const CapitalTaxPage = () => {
       </section>
 
       <section className="computation-section">
-        <h2>How the Simulation Is Computed</h2>
+        <h2>Computation's Steps</h2>
 
         <div className="computation-steps">
           <div className="step-card">
             <span className="step-number">1</span>
+            <p>
+              <strong>
+                Compute the revenue from the tax and update capital values
+              </strong>
+            </p>
             <p>
               For each capital group <strong>i</strong>:
             </p>
@@ -242,6 +251,9 @@ export const CapitalTaxPage = () => {
 
           <div className="step-card">
             <span className="step-number">2</span>
+            <p>
+              <strong>Update the deficit</strong>
+            </p>
             <p className="formula">
               Deficit(T+1) = Deficit(T) × (1 + GDP growth rate) − Tax Revenue
             </p>
@@ -249,11 +261,17 @@ export const CapitalTaxPage = () => {
 
           <div className="step-card">
             <span className="step-number">3</span>
+            <p>
+              <strong>Update the debt</strong>
+            </p>
             <p className="formula">Debt(T+1) = Debt(T) + Deficit(T+1)</p>
           </div>
 
           <div className="step-card">
             <span className="step-number">4</span>
+            <p>
+              <strong>Update GDP</strong>
+            </p>
             <p className="formula">GDP(T+1) = GDP(T) × (1 + GDP growth rate)</p>
           </div>
         </div>

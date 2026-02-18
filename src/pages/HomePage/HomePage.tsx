@@ -12,7 +12,7 @@ export const HomePage = () => {
         </p>
         <p className="subtitleDescription">
           This website is part of a "Policy Nota" written for the course From
-          Social Theory to Practice at Erasmus University.
+          Social Theory to Practice at Erasmus University Rotterdam.
         </p>
       </header>
 
@@ -20,7 +20,7 @@ export const HomePage = () => {
         <h2>Explore Measures</h2>
         <div className="measures-cards">
           <Link to="/capital-tax" className="measure-card">
-            <h3>Capital Tax</h3>
+            <h3>Capital Taxation</h3>
             <p>Simulate the impact of capital taxation on debt reduction.</p>
           </Link>
           <Link to="/spending-reduction" className="measure-card">
@@ -29,7 +29,7 @@ export const HomePage = () => {
           </Link>
           <Link to="/capital-exceptional-levy" className="measure-card">
             <h3>Exceptional Capital Levy</h3>
-            <p>Test exceptional capital measures for debt management.</p>
+            <p>Test an unique capital levy for debt reduction.</p>
           </Link>
         </div>
       </section>
@@ -44,6 +44,11 @@ export const HomePage = () => {
           </li>
           <li>Explains how those simulations have been computed</li>
           <li>Describes which assumptions underlie the computation</li>
+          <li>
+            Note that all simulations start on <strong>2025</strong> while the
+            data start in <strong>2024</strong>. Hence, the consequences of the
+            measures are only visible from 2025 onwards.
+          </li>
         </ul>
       </section>
 

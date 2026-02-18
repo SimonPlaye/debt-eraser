@@ -131,3 +131,8 @@
   padding: 8px 10px;
   border-radius: 6px;
 }
+
+.subtitle {
+  color: #555;
+  font-size: 1.2rem;
+}

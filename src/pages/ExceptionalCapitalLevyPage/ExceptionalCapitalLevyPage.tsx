@@ -55,6 +55,10 @@ export const ExceptionalCapitalLevyPage = () => {
     <div className="tax-capital-page">
       <header className="page-header">
         <h1>Exceptional Capital Levy</h1>
+        <p className="subtitle">
+          Simulate the impact of an exceptional capital levy on millionaires on
+          debt reduction.
+        </p>
       </header>
 
       <section className="simulation-section">
@@ -131,7 +135,7 @@ export const ExceptionalCapitalLevyPage = () => {
 
         <div className="assumptions-grid">
           <div className="assumption-card">
-            <h3>Macroeconomic Data (2024)</h3>
+            <h3>Macroeconomic Data</h3>
             <ul>
               <li>
                 <strong>GDP:</strong> €2,925.64B
@@ -207,13 +211,15 @@ export const ExceptionalCapitalLevyPage = () => {
         </div>
       </section>
       <section className="computation-section">
-        <h2>How the Simulation Is Computed</h2>
+        <h2>Computation's Steps</h2>
 
         <div className="computation-steps">
           <div className="step-card">
             <span className="step-number">1</span>
             <p>
-              <strong>Year 2025:</strong>
+              <strong>
+                Year 2025 - Decreasing the deficit by the capital levy
+              </strong>
             </p>
             <p>
               For each capital group <strong>i</strong>:
@@ -244,7 +250,10 @@ export const ExceptionalCapitalLevyPage = () => {
           <div className="step-card">
             <span className="step-number">2</span>
             <p>
-              <strong>Years 2025–2050 (both included):</strong>
+              <strong>
+                Years 2025–2050 (both included) - Increase variables by normal
+                growth rate{" "}
+              </strong>
             </p>
             <ul>
               <li className="formula">
