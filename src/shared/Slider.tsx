@@ -18,7 +18,7 @@ export const Slider = ({
   return (
     <div>
       <label htmlFor="slider">
-        {title}: {Math.round(value * 1000) / 10}%
+        {title}: {roundToStep(value, step)}%
       </label>
       <input
         type="range"
@@ -32,4 +32,10 @@ export const Slider = ({
       />
     </div>
   );
+};
+
+const roundToStep = (value: number, step: number) => {
+  const roundFactor = 1 / step;
+  const multiplicationOver100 = roundFactor / 100;
+  return Math.round(value * roundFactor) / multiplicationOver100;
 };

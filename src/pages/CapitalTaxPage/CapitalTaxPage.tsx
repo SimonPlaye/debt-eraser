@@ -51,6 +51,7 @@ export const CapitalTaxPage = () => {
     taxLevelGroup100mTo500m,
     taxLevelGroupFrom500m,
   ]);
+  console.log(taxLevelGroup1mTo5m);
 
   return (
     <div className="tax-capital-page">
@@ -101,6 +102,8 @@ export const CapitalTaxPage = () => {
                   setValue: setTaxLevelGroupFrom500m,
                 },
               ]}
+              maxValue={0.05}
+              step={0.001}
             />
           )}
         </div>
@@ -115,7 +118,7 @@ export const CapitalTaxPage = () => {
               title="Uniform Tax Rate"
               value={uniformTaxRate}
               setValue={setUniformTaxRate}
-              maxValue={0.15}
+              maxValue={0.05}
               step={0.001}
             />
           )}
