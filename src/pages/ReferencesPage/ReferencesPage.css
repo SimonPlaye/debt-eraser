@@ -1,0 +1,48 @@
+.references-section {
+  margin-top: 40px;
+}
+
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+
+@media (max-width: 700px) {
+  .references-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reference-card {
+  background: #f8f9fb;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid #1a4d8f;
+}
+
+.reference-card h3 {
+  color: #1a4d8f;
+  margin-bottom: 10px;
+}
+
+.reference-card ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.reference-card li {
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.reference-card a {
+  color: #1a4d8f;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.reference-card a:hover {
+  text-decoration: underline;
+}
