@@ -12,7 +12,9 @@ export const HomePage = () => {
         </p>
         <p className="subtitleDescription">
           This website is part of a "Policy Nota" written for the course From
-          Social Theory to Practice at Erasmus University Rotterdam.
+          Social Theory to Practice at Erasmus University Rotterdam.<br></br>
+          Note that this website should be used on a computer rather than on a
+          mobile phone.
         </p>
       </header>
 
@@ -56,7 +58,7 @@ export const HomePage = () => {
         <p>
           Additionally, the <Link to="/references">References</Link> page
           explains where the assumptions have been sourced.<br></br>
-          The source code of this project is available on{" "}
+          The source code of this website is available on{" "}
           <a href="https://github.com/simonplaye/debt-eraser">GitHub</a>.
         </p>
       </footer>
