@@ -38,11 +38,6 @@
   margin-bottom: 10px;
 }
 
-input[type="range"] {
-  width: 100%;
-  margin-top: 10px;
-}
-
 .assumptions-section p,
 .computation-section p {
   line-height: 1.6;
@@ -130,7 +125,7 @@ input[type="range"] {
   padding-left: 18px;
 }
 
-formula {
+.formula {
   margin-top: 10px;
   font-family: monospace;
   background: #eef2f8;
