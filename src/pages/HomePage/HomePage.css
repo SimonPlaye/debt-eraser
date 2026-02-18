@@ -23,6 +23,11 @@
   font-size: 1.2rem;
 }
 
+.subtitleDescription {
+  color: #555;
+  font-size: 0.75rem;
+}
+
 .measures-section h2,
 .info-section h2 {
   color: #1a4d8f;

@@ -10,6 +10,10 @@ export const HomePage = () => {
           Simulate the effects of different measures on France's debt and
           deficit.
         </p>
+        <p className="subtitleDescription">
+          This website is part of a "Policy Nota" written for the course From
+          Social Theory to Practice at Erasmus University.
+        </p>
       </header>
 
       <section className="measures-section">
@@ -46,7 +50,9 @@ export const HomePage = () => {
       <footer className="homepage-footer">
         <p>
           Additionally, the <Link to="/references">References</Link> page
-          contains a bibliography.
+          explains where the assumptions have been sourced.<br></br>
+          The source code of this project is available on{" "}
+          <a href="https://github.com/simonplaye/debt-eraser">GitHub</a>.
         </p>
       </footer>
     </div>
