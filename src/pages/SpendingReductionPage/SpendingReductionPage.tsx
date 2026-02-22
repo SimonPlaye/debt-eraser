@@ -116,13 +116,13 @@ export const SpendingReductionPage = () => {
         </div>
         <div>
           <Toggle
-            label="Apply Same Tax Rate to All Groups"
+            label="Apply Same Spending Reduction to All Groups"
             value={applySameTaxRateToAllGroups}
             onChange={setApplySameTaxRateToAllGroups}
           />
           {applySameTaxRateToAllGroups && (
             <Slider
-              title="Uniform Tax Rate"
+              title="Spending Reduction"
               value={uniformTaxRate}
               setValue={setUniformTaxRate}
               maxValue={1}
