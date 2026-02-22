@@ -4,9 +4,9 @@ import "./NavigationBar.css";
 export const NavigationBar = () => {
   const links = [
     { path: "/", label: "Home" },
-    { path: "/capital-tax", label: "Capital Taxation" },
+    { path: "/wealth-tax", label: "Wealth Taxation" },
     { path: "/spending-reduction", label: "Spending Reduction" },
-    { path: "/capital-exceptional-levy", label: "Exceptional Capital Levy" },
+    { path: "/wealth-exceptional-levy", label: "Exceptional Wealth Levy" },
     { path: "/references", label: "References" },
   ];
 

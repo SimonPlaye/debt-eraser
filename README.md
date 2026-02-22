@@ -5,7 +5,7 @@
 This website is a simple tool to simulate how three measures:
 
 - a wealth tax on millionaires
-- a one-time capital levy on millionaires
+- a one-time wealth levy on millionaires
 - a reduction of government's public spending.
 
 could help erase the public debt of France.
@@ -17,8 +17,8 @@ It has been coded as part of a project for the course "From Social Theory to Pra
 The website is divided into several pages:
 
 - The "Home" page which introduces the project and redirects to the other pages.
-- The "Capital Tax" page which simulates the impact of a wealth tax on millionaires.
-- The "Capital Levy" page which simulates the impact of a one-time capital levy on millionaires.
+- The "Wealth Tax" page which simulates the impact of a wealth tax on millionaires.
+- The "Wealth Levy" page which simulates the impact of a one-time wealth levy on millionaires.
 - The "Spending Reduction" page which simulates the reduction of government's public spending.
 - The "References" page which lists the sources used for the project.
 

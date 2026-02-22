@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./CapitalTaxPage.css";
+import "./WealthTaxPage.css";
 import { LineChart } from "../../shared/LineChart";
 import { getGraphData } from "./getGraphData";
 import { Toggle } from "../../shared/Toggle";
@@ -7,7 +7,7 @@ import { Slider } from "../../shared/Slider";
 import type { GraphDataType } from "../../shared/types";
 import { SliderGrid } from "../../shared/SliderGrid";
 
-export const CapitalTaxPage = () => {
+export const WealthTaxPage = () => {
   const [taxLevelGroup1mTo5m, setTaxLevelGroup1mTo5m] = useState(0);
   const [taxLevelGroup5mTo10m, setTaxLevelGroup5mTo10m] = useState(0);
   const [taxLevelGroup10mTo50m, setTaxLevelGroup10mTo50m] = useState(0);
@@ -51,14 +51,13 @@ export const CapitalTaxPage = () => {
     taxLevelGroup100mTo500m,
     taxLevelGroupFrom500m,
   ]);
-  console.log(taxLevelGroup1mTo5m);
 
   return (
-    <div className="tax-capital-page">
+    <div className="tax-wealth-page">
       <header className="page-header">
-        <h1>Capital Taxation</h1>
+        <h1>Wealth Taxation</h1>
         <p className="subtitle">
-          Simulate the effect of a permanent capital tax on millionaires for
+          Simulate the effect of a permanent Wealth tax on millionaires for
           debt reduction.
         </p>
       </header>
@@ -67,7 +66,7 @@ export const CapitalTaxPage = () => {
         <h2>Simulation</h2>
 
         <div className="parameter-subsection">
-          <h3>Capital Tax on Wealth Groups</h3>
+          <h3>Wealth Tax on Wealth Groups</h3>
           {!applySameTaxRateToAllGroups && (
             <SliderGrid
               sliders={[
@@ -161,7 +160,7 @@ export const CapitalTaxPage = () => {
               </li>
               <li>Deficit follows GDP growth</li>
               <li>
-                Capital growth: <strong>6% / year</strong>
+                Wealth growth: <strong>6% / year</strong>
               </li>
               <li>No population growth</li>
             </ul>
@@ -223,19 +222,19 @@ export const CapitalTaxPage = () => {
             <span className="step-number">1</span>
             <p>
               <strong>
-                Compute the revenue from the tax and update capital values
+                Compute the revenue from the tax and update wealth values
               </strong>
             </p>
             <p>
-              For each capital group <strong>i</strong>:
+              For each wealth group <strong>i</strong>:
             </p>
             <ul>
               <li className="formula">
-                Tax Revenue Group<sub>i</sub> = C<sub>i</sub>(T) x (1 + Capital
+                Tax Revenue Group<sub>i</sub> = C<sub>i</sub>(T) x (1 + Wealth
                 Growth Rate) x Tax Rate Group<sub>i</sub>
               </li>
               <li className="formula">
-                C<sub>i</sub>(T+1) = C<sub>i</sub>(T) x (1 + Capital Growth
+                C<sub>i</sub>(T+1) = C<sub>i</sub>(T) x (1 + Wealth Growth
                 Rate) - Tax Revenue Group
                 <sub>i</sub>
               </li>

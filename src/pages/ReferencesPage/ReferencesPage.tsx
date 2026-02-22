@@ -2,7 +2,7 @@ import "./ReferencesPage.css";
 
 export const ReferencesPage = () => {
   return (
-    <div className="tax-capital-page">
+    <div className="page">
       <header className="page-header">
         <h1>References</h1>
       </header>
@@ -88,18 +88,18 @@ export const ReferencesPage = () => {
           </div>
 
           <div className="reference-card">
-            <h3>Capital Growth Assumptions</h3>
+            <h3>Wealth Growth Assumptions</h3>
             <ul>
               <li>
-                <strong>Capital growth rate for millionaires:</strong> 6% per
+                <strong>Wealth growth rate for millionaires:</strong> 6% per
                 year
                 <br />
                 <a
-                  href="http://piketty.pse.ens.fr/files/Piketty2013Capital21c.pdf#page=31"
+                  href="http://piketty.pse.ens.fr/files/Piketty2013Wealth21c.pdf#page=31"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Estimated from Thomas Piketty's Presentation of Capital in the
+                  Estimated from Thomas Piketty's Presentation of Wealth in the
                   21st Century (p.31)
                 </a>
               </li>

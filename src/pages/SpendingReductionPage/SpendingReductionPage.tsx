@@ -61,7 +61,7 @@ export const SpendingReductionPage = () => {
   ]);
 
   return (
-    <div className="tax-capital-page">
+    <div className="tax-wealth-page">
       <header className="page-header">
         <h1>Spending Reduction</h1>
         <p className="subtitle">

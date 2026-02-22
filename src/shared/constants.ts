@@ -5,7 +5,7 @@ export const DEFICIT_LEVEL_IN_2024 = 169.8; // Negative means surplus
 export const AVERAGE_GDP_EVOLUTION_PER_YEAR = 0.032;
 export const AVERAGE_INFLATION_RATE_PER_YEAR = 0.017;
 
-// Capital repartition
+// Wealth repartition
 export const HOUSEHOLD_NB_WITH_MORE_THAN_500M = 82;
 export const HOUSEHOLD_NB_BETWEEN_100M_AND_500M = 1668;
 export const HOUSEHOLD_NB_BETWEEN_50M_AND_100M = 2638;
@@ -18,8 +18,8 @@ export const WEIGHT_UPPER_BOUNDARY = 1 / 3;
 // Nb of households in France
 export const HOUSEHOLD_NB_IN_FRANCE = 31100000;
 
-// Capital growth
-export const CAPITAL_GROWTH_RATE = 0.05;
+// Wealth growth
+export const WEALTH_GROWTH_RATE = 0.05;
 
 // Dates Information
 export const STARTING_YEAR = 2024;

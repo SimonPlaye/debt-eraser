@@ -21,17 +21,17 @@ export const HomePage = () => {
       <section className="measures-section">
         <h2>Explore Measures</h2>
         <div className="measures-cards">
-          <Link to="/capital-tax" className="measure-card">
-            <h3>Capital Taxation</h3>
-            <p>Simulate the impact of capital taxation on debt reduction.</p>
+          <Link to="/wealth-tax" className="measure-card">
+            <h3>Wealth Taxation</h3>
+            <p>Simulate the impact of wealth taxation on debt reduction.</p>
           </Link>
           <Link to="/spending-reduction" className="measure-card">
             <h3>Spending Reduction</h3>
             <p>Explore the effect of reducing government spending.</p>
           </Link>
-          <Link to="/capital-exceptional-levy" className="measure-card">
-            <h3>Exceptional Capital Levy</h3>
-            <p>Test an unique capital levy for debt reduction.</p>
+          <Link to="/wealth-exceptional-levy" className="measure-card">
+            <h3>Exceptional Wealth Levy</h3>
+            <p>Test an unique wealth levy for debt reduction.</p>
           </Link>
         </div>
       </section>

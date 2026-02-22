@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./ExceptionalCapitalLevyPage.css";
+import "./ExceptionalWealthLevyPage.css";
 import { LineChart } from "../../shared/LineChart";
 import { getGraphData } from "./getGraphData";
 import { Toggle } from "../../shared/Toggle";
@@ -7,14 +7,13 @@ import { Slider } from "../../shared/Slider";
 import type { GraphDataType } from "../../shared/types";
 import { SliderGrid } from "../../shared/SliderGrid";
 
-export const ExceptionalCapitalLevyPage = () => {
-  const [capitalLevyGroup1mTo5m, setCapitalLevyGroup1mTo5m] = useState(0);
-  const [capitalLevyGroup5mTo10m, setCapitalLevyGroup5mTo10m] = useState(0);
-  const [capitalLevyGroup10mTo50m, setCapitalLevyGroup10mTo50m] = useState(0);
-  const [capitalLevyGroup50mTo100m, setCapitalLevyGroup50mTo100m] = useState(0);
-  const [capitalLevyGroup100mTo500m, setCapitalLevyGroup100mTo500m] =
-    useState(0);
-  const [capitalLevyGroupFrom500m, setCapitalLevyGroupFrom500m] = useState(0);
+export const ExceptionalWealthLevyPage = () => {
+  const [wealthLevyGroup1mTo5m, setWealthLevyGroup1mTo5m] = useState(0);
+  const [wealthLevyGroup5mTo10m, setWealthLevyGroup5mTo10m] = useState(0);
+  const [wealthLevyGroup10mTo50m, setWealthLevyGroup10mTo50m] = useState(0);
+  const [wealthLevyGroup50mTo100m, setWealthLevyGroup50mTo100m] = useState(0);
+  const [wealthLevyGroup100mTo500m, setWealthLevyGroup100mTo500m] = useState(0);
+  const [wealthLevyGroupFrom500m, setWealthLevyGroupFrom500m] = useState(0);
   const [uniformTaxRate, setUniformTaxRate] = useState(0);
   const [applySameTaxRateToAllGroups, setApplySameTaxRateToAllGroups] =
     useState(false);
@@ -22,41 +21,41 @@ export const ExceptionalCapitalLevyPage = () => {
 
   useEffect(() => {
     if (applySameTaxRateToAllGroups) {
-      setCapitalLevyGroup1mTo5m(uniformTaxRate);
-      setCapitalLevyGroup5mTo10m(uniformTaxRate);
-      setCapitalLevyGroup10mTo50m(uniformTaxRate);
-      setCapitalLevyGroup50mTo100m(uniformTaxRate);
-      setCapitalLevyGroup100mTo500m(uniformTaxRate);
-      setCapitalLevyGroupFrom500m(uniformTaxRate);
+      setWealthLevyGroup1mTo5m(uniformTaxRate);
+      setWealthLevyGroup5mTo10m(uniformTaxRate);
+      setWealthLevyGroup10mTo50m(uniformTaxRate);
+      setWealthLevyGroup50mTo100m(uniformTaxRate);
+      setWealthLevyGroup100mTo500m(uniformTaxRate);
+      setWealthLevyGroupFrom500m(uniformTaxRate);
     }
   }, [applySameTaxRateToAllGroups, uniformTaxRate]);
 
   useEffect(() => {
     setGraphData(
       getGraphData({
-        capitalLevyGroup1mTo5m: capitalLevyGroup1mTo5m,
-        capitalLevyGroup5mTo10m: capitalLevyGroup5mTo10m,
-        capitalLevyGroup10mTo50m: capitalLevyGroup10mTo50m,
-        capitalLevyGroup50mTo100m: capitalLevyGroup50mTo100m,
-        capitalLevyGroup100mTo500m: capitalLevyGroup100mTo500m,
-        capitalLevyGroupFrom500m: capitalLevyGroupFrom500m,
+        wealthLevyGroup1mTo5m: wealthLevyGroup1mTo5m,
+        wealthLevyGroup5mTo10m: wealthLevyGroup5mTo10m,
+        wealthLevyGroup10mTo50m: wealthLevyGroup10mTo50m,
+        wealthLevyGroup50mTo100m: wealthLevyGroup50mTo100m,
+        wealthLevyGroup100mTo500m: wealthLevyGroup100mTo500m,
+        wealthLevyGroupFrom500m: wealthLevyGroupFrom500m,
       }),
     );
   }, [
-    capitalLevyGroup1mTo5m,
-    capitalLevyGroup5mTo10m,
-    capitalLevyGroup10mTo50m,
-    capitalLevyGroup50mTo100m,
-    capitalLevyGroup100mTo500m,
-    capitalLevyGroupFrom500m,
+    wealthLevyGroup1mTo5m,
+    wealthLevyGroup5mTo10m,
+    wealthLevyGroup10mTo50m,
+    wealthLevyGroup50mTo100m,
+    wealthLevyGroup100mTo500m,
+    wealthLevyGroupFrom500m,
   ]);
 
   return (
-    <div className="tax-capital-page">
+    <div className="tax-wealth-page">
       <header className="page-header">
-        <h1>Exceptional Capital Levy</h1>
+        <h1>Exceptional Wealth Levy</h1>
         <p className="subtitle">
-          Simulate the impact of an exceptional capital levy on millionaires on
+          Simulate the impact of an exceptional wealth levy on millionaires on
           debt reduction.
         </p>
       </header>
@@ -65,39 +64,39 @@ export const ExceptionalCapitalLevyPage = () => {
         <h2>Simulation</h2>
 
         <div className="parameter-subsection">
-          <h3>Exceptional Capital Levy on Wealth Groups</h3>
+          <h3>Exceptional Wealth Levy on Wealth Groups</h3>
           {!applySameTaxRateToAllGroups && (
             <SliderGrid
               sliders={[
                 {
                   title: "€1M – €5M",
-                  value: capitalLevyGroup1mTo5m,
-                  setValue: setCapitalLevyGroup1mTo5m,
+                  value: wealthLevyGroup1mTo5m,
+                  setValue: setWealthLevyGroup1mTo5m,
                 },
                 {
                   title: "€5M – €10M",
-                  value: capitalLevyGroup5mTo10m,
-                  setValue: setCapitalLevyGroup5mTo10m,
+                  value: wealthLevyGroup5mTo10m,
+                  setValue: setWealthLevyGroup5mTo10m,
                 },
                 {
                   title: "€10M – €50M",
-                  value: capitalLevyGroup10mTo50m,
-                  setValue: setCapitalLevyGroup10mTo50m,
+                  value: wealthLevyGroup10mTo50m,
+                  setValue: setWealthLevyGroup10mTo50m,
                 },
                 {
                   title: "€50M – €100M",
-                  value: capitalLevyGroup50mTo100m,
-                  setValue: setCapitalLevyGroup50mTo100m,
+                  value: wealthLevyGroup50mTo100m,
+                  setValue: setWealthLevyGroup50mTo100m,
                 },
                 {
                   title: "€100M – €500M",
-                  value: capitalLevyGroup100mTo500m,
-                  setValue: setCapitalLevyGroup100mTo500m,
+                  value: wealthLevyGroup100mTo500m,
+                  setValue: setWealthLevyGroup100mTo500m,
                 },
                 {
                   title: "€500M+",
-                  value: capitalLevyGroupFrom500m,
-                  setValue: setCapitalLevyGroupFrom500m,
+                  value: wealthLevyGroupFrom500m,
+                  setValue: setWealthLevyGroupFrom500m,
                 },
               ]}
             />
@@ -157,7 +156,7 @@ export const ExceptionalCapitalLevyPage = () => {
               </li>
               <li>Deficit follows GDP growth</li>
               <li>
-                Capital growth: <strong>6% / yr</strong>
+                Wealth growth: <strong>6% / yr</strong>
               </li>
               <li>No population growth</li>
             </ul>
@@ -218,15 +217,15 @@ export const ExceptionalCapitalLevyPage = () => {
             <span className="step-number">1</span>
             <p>
               <strong>
-                Year 2025 - Decreasing the deficit by the capital levy
+                Year 2025 - Decreasing the deficit by the wealth levy
               </strong>
             </p>
             <p>
-              For each capital group <strong>i</strong>:
+              For each wealth group <strong>i</strong>:
             </p>
             <ul>
               <li className="formula">
-                Levy Revenue Group<sub>i</sub> = C<sub>i</sub>(T) x (1 + Capital
+                Levy Revenue Group<sub>i</sub> = C<sub>i</sub>(T) x (1 + Wealth
                 Growth Rate) x Levy Rate Group<sub>i</sub>
               </li>
             </ul>
