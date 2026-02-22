@@ -8,7 +8,7 @@ This website is a simple tool to simulate how three measures:
 - a one-time wealth levy on millionaires
 - a reduction of government's public spending.
 
-could help erase the public debt of France.
+could help decrease the public debt of France.
 
 It has been coded as part of a project for the course "From Social Theory to Practice" at Erasmus University Rotterdam.
 

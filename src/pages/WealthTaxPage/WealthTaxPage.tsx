@@ -57,8 +57,8 @@ export const WealthTaxPage = () => {
       <header className="page-header">
         <h1>Wealth Taxation</h1>
         <p className="subtitle">
-          Simulate the effect of a permanent Wealth tax on millionaires for
-          debt reduction.
+          Simulate the effect of a permanent wealth tax on millionaires for debt
+          reduction.
         </p>
       </header>
 
@@ -234,8 +234,8 @@ export const WealthTaxPage = () => {
                 Growth Rate) x Tax Rate Group<sub>i</sub>
               </li>
               <li className="formula">
-                C<sub>i</sub>(T+1) = C<sub>i</sub>(T) x (1 + Wealth Growth
-                Rate) - Tax Revenue Group
+                C<sub>i</sub>(T+1) = C<sub>i</sub>(T) x (1 + Wealth Growth Rate)
+                - Tax Revenue Group
                 <sub>i</sub>
               </li>
             </ul>

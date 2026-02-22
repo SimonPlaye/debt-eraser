@@ -56,7 +56,7 @@ export const HomePage = () => {
         </ul>
         <p>
           Note on the <strong>Timeline</strong> - simulations start in{" "}
-          <strong>2025</strong>, using <strong>2024</strong> data (effects
+          <strong>2025</strong>, using <strong>2024</strong> data (effects are
           visible from 2025 onward)
         </p>
       </section>

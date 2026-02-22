@@ -99,7 +99,7 @@ export const ReferencesPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Estimated from Thomas Piketty's Presentation of Wealth in the
+                  Estimated from Thomas Piketty's Presentation of Capital in the
                   21st Century (p.31)
                 </a>
               </li>
