@@ -27,7 +27,7 @@ export const ENDING_YEAR = 2050;
 export const NUMBER_OF_YEARS = ENDING_YEAR - STARTING_YEAR;
 
 // State's spending
-export const TAX_EXPENDITURES_IN_2024 = 90;
+export const TAX_LOOPHOLES_IN_2024 = 90;
 export const EDUCATION_BUDGET = 87;
 export const DEFENSE_BUDGET = 68;
 export const RESEARCH_AND_HIGHER_EDUCATION_BUDGET = 32;

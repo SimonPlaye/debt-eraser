@@ -107,10 +107,10 @@ export const ReferencesPage = () => {
           </div>
 
           <div className="reference-card">
-            <h3>Tax Expenditures & Public Spending</h3>
+            <h3>Public Spending</h3>
             <ul>
               <li>
-                <strong>Tax Expenditures (Niches fiscales):</strong>
+                <strong>Tax Loopholes (Niches fiscales):</strong>
                 <br />
                 <a
                   href="https://www.ccomptes.fr/sites/default/files/2025-04/NEB-2024-Depenses-fiscales.pdf#page=10"

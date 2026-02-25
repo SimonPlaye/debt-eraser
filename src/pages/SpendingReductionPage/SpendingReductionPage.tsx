@@ -12,11 +12,11 @@ import {
   EDUCATION_BUDGET,
   RESEARCH_AND_HIGHER_EDUCATION_BUDGET,
   SOLIDARITY_AND_ALL_BUDGET,
-  TAX_EXPENDITURES_IN_2024,
+  TAX_LOOPHOLES_IN_2024,
 } from "../../shared/constants";
 
 export const SpendingReductionPage = () => {
-  const [taxTaxExpenditure, setTaxTaxExpenditure] = useState(0);
+  const [taxTaxLoopholes, setTaxTaxLoopholes] = useState(0);
   const [taxEducation, setTaxEducation] = useState(0);
   const [taxDefense, setTaxDefense] = useState(0);
   const [taxResearch, setTaxResearch] = useState(0);
@@ -29,7 +29,7 @@ export const SpendingReductionPage = () => {
 
   useEffect(() => {
     if (applySameTaxRateToAllGroups) {
-      setTaxTaxExpenditure(uniformTaxRate);
+      setTaxTaxLoopholes(uniformTaxRate);
       setTaxEducation(uniformTaxRate);
       setTaxDefense(uniformTaxRate);
       setTaxResearch(uniformTaxRate);
@@ -42,7 +42,7 @@ export const SpendingReductionPage = () => {
     setGraphData(
       getGraphData({
         taxLevels: {
-          taxTaxExpenditure: taxTaxExpenditure,
+          taxTaxLoopholes: taxTaxLoopholes,
           taxEducation: taxEducation,
           taxDefense: taxDefense,
           taxResearch: taxResearch,
@@ -52,7 +52,7 @@ export const SpendingReductionPage = () => {
       }),
     );
   }, [
-    taxTaxExpenditure,
+    taxTaxLoopholes,
     taxEducation,
     taxDefense,
     taxResearch,
@@ -78,9 +78,9 @@ export const SpendingReductionPage = () => {
             <SliderGrid
               sliders={[
                 {
-                  title: `Tax Expenditure Reduction (${TAX_EXPENDITURES_IN_2024} billions €)`,
-                  value: taxTaxExpenditure,
-                  setValue: setTaxTaxExpenditure,
+                  title: `Tax Loopholes Reduction (${TAX_LOOPHOLES_IN_2024} billions €)`,
+                  value: taxTaxLoopholes,
+                  setValue: setTaxTaxLoopholes,
                 },
                 {
                   title: `Education Budget Reduction (${EDUCATION_BUDGET} billions €)`,
@@ -176,8 +176,8 @@ export const SpendingReductionPage = () => {
             <table className="households-table">
               <tbody>
                 <tr>
-                  <td>Tax Expenditures</td>
-                  <td>{TAX_EXPENDITURES_IN_2024}</td>
+                  <td>Tax Loopholes</td>
+                  <td>{TAX_LOOPHOLES_IN_2024}</td>
                 </tr>
                 <tr>
                   <td>Education</td>

@@ -3,7 +3,7 @@ export type TaxLevels = {
 };
 
 export type TaxLevelPerSpendingCategory = {
-  taxTaxExpenditure: number;
+  taxTaxLoopholes: number;
   taxEducation: number;
   taxDefense: number;
   taxResearch: number;

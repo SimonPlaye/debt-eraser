@@ -8,7 +8,7 @@ import {
   GDP_LEVEL_IN_2024,
   RESEARCH_AND_HIGHER_EDUCATION_BUDGET,
   SOLIDARITY_AND_ALL_BUDGET,
-  TAX_EXPENDITURES_IN_2024,
+  TAX_LOOPHOLES_IN_2024,
 } from "../../shared/constants";
 import { formatToGraphData } from "../../shared/formatToGraphData";
 import type { TaxLevels } from "./types";
@@ -21,10 +21,10 @@ export const getGraphData = ({ taxLevels }: TaxLevels) => {
   const debtToGdpRatios: number[] = [debt / gdp];
   const deficitToGdpRatios: number[] = [deficit / gdp];
 
-  const expenditureBudget2025 =
-    TAX_EXPENDITURES_IN_2024 *
+  const taxLoopholesBudget2025 =
+    TAX_LOOPHOLES_IN_2024 *
     (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
-    taxLevels.taxTaxExpenditure;
+    taxLevels.taxTaxLoopholes;
   const educationBudget2025 =
     EDUCATION_BUDGET *
     (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) *
@@ -48,7 +48,7 @@ export const getGraphData = ({ taxLevels }: TaxLevels) => {
 
   deficit =
     deficit * (1 + AVERAGE_GDP_EVOLUTION_PER_YEAR) -
-    (expenditureBudget2025 +
+    (taxLoopholesBudget2025 +
       educationBudget2025 +
       defenseBudget2025 +
       researchBudget2025 +
